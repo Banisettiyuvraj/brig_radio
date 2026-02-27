@@ -13,6 +13,7 @@ import Security from './sections/Security';
 import WhyCampusWave from './sections/WhyCampusWave';
 import AboutCollege from './sections/AboutCollege';
 import Leadership from './sections/Leadership';
+import Team from './sections/Team';
 import DownloadCTA from './sections/DownloadCTA';
 import Footer from './sections/Footer';
 import AmbientBackground from './components/AmbientBackground';
@@ -73,6 +74,7 @@ function App() {
         <WhyCampusWave />
         <AboutCollege />
         <Leadership />
+        <Team />
         <DownloadCTA />
       </main>
 

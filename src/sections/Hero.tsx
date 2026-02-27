@@ -123,7 +123,7 @@ const Hero = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const headlineWords = "The Official Campus Communication Platform of BRIG".split(' ');
+  const headlineWords = "The Offficial Campus Communication Platform of BRIG".split(' ');
 
   return (
     <section
