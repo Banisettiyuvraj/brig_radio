@@ -5,7 +5,6 @@ import { Menu, X, Download } from 'lucide-react';
 const navLinks = [
   { name: 'Home', href: '#home' },
   { name: 'Features', href: '#features' },
-  { name: 'Placements', href: '#placements' },
   { name: 'How It Works', href: '#how-it-works' },
   { name: 'About', href: '#about' },
   { name: 'Contact', href: '#contact' },
@@ -68,7 +67,7 @@ const Navbar = () => {
     <>
       <nav
         ref={navRef}
-        className={`fixed top-24 sm:top-20 lg:top-20 left-0 right-0 z-40 transition-all duration-500 ${isScrolled
+        className={`relative lg:fixed lg:top-20 left-0 right-0 z-40 transition-all duration-500 ${isScrolled
           ? 'py-2'
           : 'py-1'
           }`}
@@ -140,7 +139,7 @@ const Navbar = () => {
           className="absolute inset-0 bg-black/20 backdrop-blur-sm"
           onClick={() => setIsMobileMenuOpen(false)}
         />
-        <div className={`absolute top-28 left-4 right-4 bg-white rounded-2xl shadow-2xl p-6 transition-all duration-500 ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'
+        <div className={`absolute top-32 lg:top-28 left-4 right-4 bg-white rounded-2xl shadow-2xl p-6 pt-[calc(1.5rem+env(safe-area-inset-top))] transition-all duration-500 ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-10 opacity-0'
           }`}>
           <div className="flex flex-col gap-2">
             {navLinks.map((link) => (

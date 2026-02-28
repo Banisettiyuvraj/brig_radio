@@ -10,7 +10,7 @@ const steps = [
     number: '01',
     icon: Download,
     title: 'Download the App',
-    description: 'Get CampusWave from Google Play Store. iOS version coming soon!',
+    description: 'Get Brig Radio from Google Play Store. iOS version coming soon!',
     color: 'from-blue-500 to-cyan-500',
   },
   {
@@ -142,7 +142,7 @@ const HowItWorks = () => {
             How It Works
           </h2>
           <p className="body-lg max-w-2xl mx-auto">
-            Get started with CampusWave in four simple steps
+            Get started with Brig Radio in four simple steps
           </p>
         </div>
 

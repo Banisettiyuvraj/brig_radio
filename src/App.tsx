@@ -10,7 +10,7 @@ import Solutions from './sections/Solutions';
 import AppPreview from './sections/AppPreview';
 import HowItWorks from './sections/HowItWorks';
 import Security from './sections/Security';
-import WhyCampusWave from './sections/WhyCampusWave';
+import WhyBrigRadio from './sections/WhyBrigRadio';
 import AboutCollege from './sections/AboutCollege';
 import Leadership from './sections/Leadership';
 import Team from './sections/Team';
@@ -71,7 +71,7 @@ function App() {
         <AppPreview />
         <HowItWorks />
         <Security />
-        <WhyCampusWave />
+        <WhyBrigRadio />
         <AboutCollege />
         <Leadership />
         <Team />

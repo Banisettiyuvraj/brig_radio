@@ -7,7 +7,7 @@ import {
   Briefcase,
   Lightbulb,
 
-  Bell,
+
   CheckCircle2
 } from 'lucide-react';
 
@@ -21,7 +21,7 @@ const features = [
     color: 'bg-rose-500',
     lightColor: 'bg-rose-50',
     image: '/images/app/app-radio-session.jpeg',
-    benefits: ['Background playback', 'Live notifications', 'Session recordings'],
+    benefits: ['Background playback', 'Live notifications', 'Recorded sessions'],
   },
   {
     icon: Newspaper,
@@ -30,7 +30,7 @@ const features = [
     color: 'bg-blue-500',
     lightColor: 'bg-blue-50',
     image: '/images/app/app-updates.jpeg',
-    benefits: ['Official only', 'Like & comment', 'Category filters'],
+    benefits: ['Official only', 'Like', 'Instant notifications'],
   },
   {
     icon: Briefcase,
@@ -39,7 +39,7 @@ const features = [
     color: 'bg-green-500',
     lightColor: 'bg-green-50',
     image: '/images/app/app-placements-new.jpeg',
-    benefits: ['Deadline tracking', 'Bookmark jobs', 'Direct apply links'],
+    benefits: ['Bookmark jobs', 'Direct apply links', 'Save jobs'],
   },
   {
     icon: Lightbulb,
@@ -47,19 +47,11 @@ const features = [
     description: 'Submit ideas and get notified when approved. Your voice matters - contribute to making campus life better for everyone.',
     color: 'bg-amber-500',
     lightColor: 'bg-amber-50',
-    image: '/images/app/app-home.jpeg',
-    benefits: ['Idea submission', 'Approval tracking', 'Community voting'],
+    image: '/images/app/app-suggestions.jpeg',
+    benefits: ['Idea submission', 'Approval tracking', 'instant mail'],
   },
 
-  {
-    icon: Bell,
-    title: 'Smart Notifications',
-    description: 'Instant alerts for important updates. Customizable notifications ensure you only get what matters to you.',
-    color: 'bg-cyan-500',
-    lightColor: 'bg-cyan-50',
-    image: '/images/app/app-home1.jpeg',
-    benefits: ['Custom alerts', 'Priority levels', 'Quiet hours'],
-  },
+
 ];
 
 const Solutions = () => {

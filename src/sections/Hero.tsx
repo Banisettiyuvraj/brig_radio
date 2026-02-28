@@ -195,7 +195,7 @@ const Hero = () => {
               ref={subheadRef}
               className="body-lg max-w-xl mx-auto lg:mx-auto mb-8"
             >
-              Stay updated. Never miss placements. Share ideas — all in one app.
+              Stay updated. Never miss placements. All in one app.
             </p>
 
             {/* CTA Buttons */}
@@ -248,7 +248,7 @@ const Hero = () => {
                   <div className="relative rounded-[2rem] overflow-hidden bg-white aspect-[9/19]">
                     <img
                       src="/images/app/app-home.jpeg"
-                      alt="CampusWave App Dashboard"
+                      alt="Brig Radio App Dashboard"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -261,8 +261,8 @@ const Hero = () => {
                       <span className="text-green-600 text-lg">✓</span>
                     </div>
                     <div>
-                      <div className="text-xs font-semibold">Issue Resolved</div>
-                      <div className="text-[10px] text-gray-500">WiFi Fixed!</div>
+                      <div className="text-xs font-semibold">College update</div>
+                      <div className="text-[10px] text-gray-500">New Event!</div>
                     </div>
                   </div>
                 </div>

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Pin, GraduationCap, MessageSquare, Wrench } from 'lucide-react';
+import { Pin, GraduationCap } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,20 +20,6 @@ const problems = [
     color: 'from-orange-500 to-yellow-500',
     bgColor: 'bg-orange-50',
   },
-  {
-    icon: MessageSquare,
-    title: 'No structured way to share ideas',
-    description: 'Great suggestions from students never reach the right people.',
-    color: 'from-blue-500 to-cyan-500',
-    bgColor: 'bg-blue-50',
-  },
-  {
-    icon: Wrench,
-    title: 'Issues are not properly tracked',
-    description: 'Campus problems reported but forgotten without proper follow-up.',
-    color: 'from-purple-500 to-pink-500',
-    bgColor: 'bg-purple-50',
-  },
 ];
 
 const Problems = () => {
@@ -43,7 +29,7 @@ const Problems = () => {
 
   useEffect(() => {
     const triggers: ScrollTrigger[] = [];
-    
+
     const ctx = gsap.context(() => {
       // Title animation
       const titleTrigger = ScrollTrigger.create({
@@ -58,22 +44,22 @@ const Problems = () => {
         once: true
       });
       triggers.push(titleTrigger);
-      
+
       // Cards animation with stagger
       cardsRef.current.forEach((card, index) => {
         if (!card) return;
-        
+
         const cardTrigger = ScrollTrigger.create({
           trigger: card,
           start: 'top 85%',
           onEnter: () => {
             gsap.fromTo(card,
-              { 
-                y: 80, 
+              {
+                y: 80,
                 opacity: 0,
                 rotateX: -15,
               },
-              { 
+              {
                 y: index % 2 === 1 ? 40 : 0, // Offset for even cards
                 opacity: 1,
                 rotateX: 0,
@@ -88,7 +74,7 @@ const Problems = () => {
         triggers.push(cardTrigger);
       });
     });
-    
+
     return () => {
       triggers.forEach(t => t.kill());
       ctx.revert();
@@ -96,13 +82,13 @@ const Problems = () => {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
       className="relative py-20 lg:py-32 bg-white overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div 
+        <div
           className="absolute inset-0"
           style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, #1e3a8a 1px, transparent 0)`,
@@ -110,7 +96,7 @@ const Problems = () => {
           }}
         />
       </div>
-      
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div ref={titleRef} className="text-center mb-16">
@@ -124,16 +110,16 @@ const Problems = () => {
             Everyday struggles that affect student life and academic success
           </p>
         </div>
-        
-        {/* Problem Cards - Fractured Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 perspective-1000">
+
+        {/* Problem Cards - Centered Layout */}
+        <div className="flex flex-col sm:flex-row justify-center gap-8 perspective-1000">
           {problems.map((problem, index) => {
             const Icon = problem.icon;
             return (
               <div
                 key={index}
                 ref={el => { cardsRef.current[index] = el; }}
-                className={`group relative ${index % 2 === 1 ? 'lg:mt-10' : ''}`}
+                className={`group relative w-full max-w-sm ${index % 2 === 1 ? 'sm:mt-10' : ''}`}
               >
                 <div className="relative bg-white rounded-2xl p-6 shadow-card border border-gray-100 
                               transition-all duration-500 hover:shadow-card-hover hover:-translate-y-2
@@ -141,13 +127,13 @@ const Problems = () => {
                   {/* Hover Gradient Background */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${problem.color} opacity-0 
                                   group-hover:opacity-5 transition-opacity duration-500`} />
-                  
+
                   {/* Icon */}
                   <div className={`relative w-14 h-14 ${problem.bgColor} rounded-xl flex items-center justify-center
                                   mb-5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6`}>
                     <Icon className="w-7 h-7 text-gray-700" />
                   </div>
-                  
+
                   {/* Content */}
                   <h3 className="text-lg font-semibold text-brig-text-dark mb-3 
                                group-hover:text-primary-blue transition-colors duration-300">
@@ -156,7 +142,7 @@ const Problems = () => {
                   <p className="text-sm text-brig-text-gray leading-relaxed">
                     {problem.description}
                   </p>
-                  
+
                   {/* Bottom Accent Line */}
                   <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${problem.color}
                                   transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
@@ -165,7 +151,7 @@ const Problems = () => {
             );
           })}
         </div>
-        
+
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <p className="text-brig-text-gray mb-4">
@@ -173,7 +159,7 @@ const Problems = () => {
           </p>
           <div className="inline-flex items-center gap-2 text-primary-blue font-semibold">
             <span className="w-8 h-0.5 bg-primary-blue" />
-            <span>CampusWave is the solution</span>
+            <span>Brig Radio is the solution</span>
             <span className="w-8 h-0.5 bg-primary-blue" />
           </div>
         </div>

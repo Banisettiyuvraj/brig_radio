@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Award, Quote, Linkedin, Mail } from 'lucide-react';
+import { Award, Quote } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,7 +51,7 @@ const Leadership = () => {
 
   useEffect(() => {
     const triggers: ScrollTrigger[] = [];
-    
+
     const ctx = gsap.context(() => {
       // Title animation
       const titleTrigger = ScrollTrigger.create({
@@ -66,20 +66,20 @@ const Leadership = () => {
         once: true
       });
       triggers.push(titleTrigger);
-      
+
       // Cards animation
       cardsRef.current.forEach((card, index) => {
         if (!card) return;
-        
+
         const cardTrigger = ScrollTrigger.create({
           trigger: card,
           start: 'top 85%',
           onEnter: () => {
             gsap.fromTo(card,
               { y: 60, opacity: 0, scale: 0.95 },
-              { 
-                y: 0, 
-                opacity: 1, 
+              {
+                y: 0,
+                opacity: 1,
                 scale: 1,
                 duration: 0.8,
                 delay: index * 0.15,
@@ -92,7 +92,7 @@ const Leadership = () => {
         triggers.push(cardTrigger);
       });
     });
-    
+
     return () => {
       triggers.forEach(t => t.kill());
       ctx.revert();
@@ -100,7 +100,7 @@ const Leadership = () => {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
       className="relative py-20 lg:py-32 bg-[#f8fafc] overflow-hidden"
     >
@@ -109,7 +109,7 @@ const Leadership = () => {
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#1e3a8a]/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#3b82f6]/5 rounded-full blur-3xl" />
       </div>
-      
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div ref={titleRef} className="text-center mb-16">
@@ -120,11 +120,11 @@ const Leadership = () => {
             Guided by Visionaries
           </h2>
           <p className="body-lg max-w-2xl mx-auto">
-            Under the leadership of experienced academicians and dedicated professionals, 
+            Under the leadership of experienced academicians and dedicated professionals,
             BRIG continues to redefine standards in technical education
           </p>
         </div>
-        
+
         {/* Leadership Cards */}
         <div className="grid md:grid-cols-2 gap-8">
           {leaders.map((leader, index) => (
@@ -136,19 +136,19 @@ const Leadership = () => {
             >
               {/* Top Accent */}
               <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${leader.color}`} />
-              
+
               <div className="grid sm:grid-cols-5 gap-0">
                 {/* Image */}
                 <div className="sm:col-span-2 relative h-64 sm:h-full overflow-hidden">
-                  <img 
-                    src={leader.image} 
+                  <img
+                    src={leader.image}
                     alt={leader.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   {/* Overlay */}
                   <div className={`absolute inset-0 bg-gradient-to-t ${leader.color} opacity-0 
                                   group-hover:opacity-20 transition-opacity duration-500`} />
-                  
+
                   {/* Badge */}
                   <div className="absolute top-4 left-4">
                     <div className={`w-10 h-10 bg-gradient-to-r ${leader.color} rounded-full 
@@ -157,7 +157,7 @@ const Leadership = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Content */}
                 <div className="sm:col-span-3 p-6 lg:p-8 flex flex-col justify-between">
                   <div>
@@ -173,12 +173,12 @@ const Leadership = () => {
                         <span className="text-sm text-gray-500">{leader.subtitle}</span>
                       </div>
                     </div>
-                    
+
                     {/* Credentials */}
                     <p className="text-sm text-[#1e3a8a] font-medium mb-4">
                       {leader.credentials}
                     </p>
-                    
+
                     {/* Quote */}
                     <div className="relative bg-gray-50 rounded-xl p-4 mb-4">
                       <Quote className="absolute -top-2 -left-2 w-6 h-6 text-gray-300" />
@@ -187,24 +187,13 @@ const Leadership = () => {
                       </p>
                     </div>
                   </div>
-                  
-                  {/* Social Links */}
-                  <div className="flex gap-3">
-                    <button className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center
-                                     hover:bg-[#1e3a8a] hover:text-white transition-colors">
-                      <Linkedin className="w-5 h-5" />
-                    </button>
-                    <button className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center
-                                     hover:bg-[#1e3a8a] hover:text-white transition-colors">
-                      <Mail className="w-5 h-5" />
-                    </button>
-                  </div>
+
                 </div>
               </div>
             </div>
           ))}
         </div>
-        
+
         {/* Bottom Note */}
         <div className="mt-12 text-center">
           <p className="text-gray-500">

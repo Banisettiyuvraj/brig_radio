@@ -14,12 +14,12 @@ const screens = [
   {
     image: '/images/app/app-radio-session.jpeg',
     title: 'Live Radio',
-    description: 'Stream campus radio live with background playback support.',
+    description: 'Stream Radio live with background playback support.',
   },
   {
     image: '/images/app/app-placements-new.jpeg',
     title: 'Placements',
-    description: 'Browse and apply to job opportunities with deadline tracking.',
+    description: 'Browse and apply to job opportunities ',
   },
   {
     image: '/images/app/app-updates.jpeg',
@@ -100,7 +100,7 @@ const AppPreview = () => {
 
           </span>
           <h2 className="heading-lg text-[#1e293b] mb-4">
-            Experience CampusWave
+            Experience Brig Radio
           </h2>
           <p className="body-lg max-w-2xl mx-auto">
             Take a sneak peek at what awaits you inside the app

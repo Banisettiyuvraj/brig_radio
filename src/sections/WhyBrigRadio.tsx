@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { CheckCircle2, TrendingUp, MessageCircle, Target, Zap } from 'lucide-react';
+import { CheckCircle2, MessageCircle, Zap } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,30 +20,17 @@ const benefits = [
     stat: '100%',
     statLabel: 'Verified Updates',
   },
-  {
-    icon: Target,
-    title: 'Structured Issue Resolution',
-    description: 'Track your complaints from submission to resolution with complete transparency.',
-    stat: '48h',
-    statLabel: 'Avg. Resolution Time',
-  },
-  {
-    icon: TrendingUp,
-    title: 'Stronger Student Participation',
-    description: 'Voice your ideas and see them transform into real campus initiatives.',
-    stat: '3x',
-    statLabel: 'More Engagement',
-  },
+
 ];
 
-const WhyCampusWave = () => {
+const WhyBrigRadio = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const triggers: ScrollTrigger[] = [];
-    
+
     const ctx = gsap.context(() => {
       // Title animation
       const titleTrigger = ScrollTrigger.create({
@@ -58,27 +45,27 @@ const WhyCampusWave = () => {
         once: true
       });
       triggers.push(titleTrigger);
-      
+
       // Cards animation
       cardsRef.current.forEach((card, index) => {
         if (!card) return;
-        
+
         const cardTrigger = ScrollTrigger.create({
           trigger: card,
           start: 'top 85%',
           onEnter: () => {
             gsap.fromTo(card,
               { y: 60, opacity: 0, scale: 0.95 },
-              { 
-                y: 0, 
-                opacity: 1, 
+              {
+                y: 0,
+                opacity: 1,
                 scale: 1,
                 duration: 0.8,
                 delay: index * 0.1,
                 ease: 'power3.out'
               }
             );
-            
+
             // Stat counter animation
             const statEl = card.querySelector('.stat-number');
             if (statEl) {
@@ -93,7 +80,7 @@ const WhyCampusWave = () => {
         triggers.push(cardTrigger);
       });
     });
-    
+
     return () => {
       triggers.forEach(t => t.kill());
       ctx.revert();
@@ -101,7 +88,7 @@ const WhyCampusWave = () => {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
       className="relative py-20 lg:py-32 bg-white overflow-hidden"
     >
@@ -110,7 +97,7 @@ const WhyCampusWave = () => {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-50/50 to-transparent" />
         <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-t from-brig-bg-light to-transparent" />
       </div>
-      
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div ref={titleRef} className="text-center mb-16">
@@ -118,15 +105,15 @@ const WhyCampusWave = () => {
             Impact
           </span>
           <h2 className="heading-lg text-brig-text-dark mb-4">
-            Why CampusWave Matters
+            Why Brig Radio Matters
           </h2>
           <p className="body-lg max-w-2xl mx-auto">
             Real benefits that transform the student experience at BRIG
           </p>
         </div>
-        
-        {/* Benefits Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        {/* Benefits Centered Layout */}
+        <div className="flex flex-col sm:flex-row justify-center gap-6">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
@@ -139,19 +126,19 @@ const WhyCampusWave = () => {
                 {/* Top Accent */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-blue to-light-blue
                               transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-t-2xl" />
-                
+
                 {/* Icon */}
                 <div className="w-12 h-12 bg-primary-blue/10 rounded-xl flex items-center justify-center mb-4
                               group-hover:bg-primary-blue group-hover:scale-110 transition-all duration-300">
                   <Icon className="w-6 h-6 text-primary-blue group-hover:text-white transition-colors" />
                 </div>
-                
+
                 {/* Stat */}
                 <div className="stat-number mb-3" data-value={benefit.stat}>
                   <span className="text-3xl font-bold text-gradient">{benefit.stat}</span>
                   <span className="text-sm text-brig-text-gray ml-2">{benefit.statLabel}</span>
                 </div>
-                
+
                 {/* Content */}
                 <h3 className="text-lg font-semibold text-brig-text-dark mb-2
                              group-hover:text-primary-blue transition-colors duration-300">
@@ -160,7 +147,7 @@ const WhyCampusWave = () => {
                 <p className="text-sm text-brig-text-gray leading-relaxed">
                   {benefit.description}
                 </p>
-                
+
                 {/* Hover Arrow */}
                 <div className="absolute bottom-6 right-6 w-8 h-8 bg-primary-blue/0 rounded-full
                               flex items-center justify-center opacity-0 group-hover:opacity-100
@@ -171,20 +158,17 @@ const WhyCampusWave = () => {
             );
           })}
         </div>
-        
+
         {/* Bottom Quote */}
         <div className="mt-16 text-center">
           <blockquote className="text-xl lg:text-2xl text-brig-text-dark font-medium italic max-w-3xl mx-auto">
-            "CampusWave has revolutionized how we communicate with our students. 
-            It is not just an app - it is a bridge between administration and students."
+            "Brig Radio isn’t just an application—it’s a unified communication ecosystem that seamlessly connects students with administration, fostering clarity, trust, and engagement."
           </blockquote>
           <div className="mt-4 flex items-center justify-center gap-3">
             <div className="w-10 h-10 bg-primary-blue rounded-full flex items-center justify-center">
               <span className="text-white font-semibold">D</span>
             </div>
             <div className="text-left">
-              <div className="font-semibold text-brig-text-dark">Dr. Director</div>
-              <div className="text-sm text-brig-text-gray">Principal, BRIG</div>
             </div>
           </div>
         </div>
@@ -193,4 +177,4 @@ const WhyCampusWave = () => {
   );
 };
 
-export default WhyCampusWave;
+export default WhyBrigRadio;
