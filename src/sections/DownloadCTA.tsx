@@ -5,7 +5,7 @@ import { Download, Smartphone, Sparkles } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const APK_URL = './brig_radio_v1.0.0.apk';
+const APK_URL = '/BrigRadio.apk';
 const THANK_YOU_URL = './thank-you.html';
 
 const DownloadCTA = () => {
@@ -18,7 +18,7 @@ const DownloadCTA = () => {
         // 1. Trigger APK download via hidden anchor
         const link = document.createElement('a');
         link.href = APK_URL;
-        link.download = 'brig_radio_v1.0.0.apk';
+        link.download = 'BrigRadio.apk';
         link.style.display = 'none';
         document.body.appendChild(link);
         link.click();

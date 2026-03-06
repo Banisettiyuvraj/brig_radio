@@ -18,7 +18,7 @@ interface TeamMember {
 
 const facultyTeam: TeamMember[] = [
   {
-    name: 'G Harika',
+    name: 'G.Harika',
     role: 'Department of CSE',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com',
@@ -60,8 +60,8 @@ const studentTeam: TeamMember[] = [
   {
     name: 'S. Rohith Kumar',
     role: '23494-CS-003',
-    linkedin: 'https://www.linkedin.com/in/shilamanthula-r-341868382/',
-    github: 'https://github.com',
+    linkedin: 'https://www.linkedin.com/in/rohith-k-341868382/',
+    github: 'https://github.com/Rohith0713',
     gradient: 'from-[#1e3a8a] to-[#3b82f6]',
   },
   {
@@ -233,7 +233,7 @@ const Team = () => {
             Diploma CSE Students Team
           </h2>
           <p className="body-lg max-w-2xl mx-auto">
-            The talented students from the Diploma Computer Science Engineering department who engineered CampusWave
+            The talented students from the Diploma Computer Science Engineering department who engineered Brig Radio
           </p>
         </div>
 

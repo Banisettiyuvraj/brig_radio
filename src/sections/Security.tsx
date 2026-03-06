@@ -25,10 +25,7 @@ const securityFeatures = [
 ];
 
 const certifications = [
-  'ISO 27001 Certified',
-  'GDPR Compliant',
   'End-to-End Encrypted',
-  'SOC 2 Type II',
 ];
 
 const Security = () => {
@@ -163,7 +160,7 @@ const Security = () => {
                 Secure & Official Platform
               </h2>
               <p className="text-blue-100 text-lg mb-6 max-w-md">
-                Your security is our top priority. CampusWave is built with institutional-grade protection.
+                Your security is our top priority. Brig Radio is built with institutional-grade protection.
               </p>
 
               {/* Certification Badges */}

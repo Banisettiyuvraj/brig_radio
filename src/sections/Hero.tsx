@@ -195,17 +195,14 @@ const Hero = () => {
               ref={subheadRef}
               className="body-lg max-w-xl mx-auto lg:mx-auto mb-8"
             >
-              Stay updated. Never miss placements. Share ideas — all in one app.
+              Stay updated. Never miss placements. All in one app.
             </p>
 
             {/* CTA Buttons */}
             <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
-                href="#download"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector('#download')?.scrollIntoView({ behavior: 'smooth' });
-                }}
+                href="/BrigRadio.apk"
+                download="BrigRadio.apk"
                 className="btn-primary flex items-center justify-center gap-2 group"
               >
                 <Download className="w-5 h-5 transition-transform group-hover:translate-y-0.5" />
@@ -248,7 +245,7 @@ const Hero = () => {
                   <div className="relative rounded-[2rem] overflow-hidden bg-white aspect-[9/19]">
                     <img
                       src="/images/app/app-home.jpeg"
-                      alt="CampusWave App Dashboard"
+                      alt="Brig Radio App Dashboard"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -261,8 +258,8 @@ const Hero = () => {
                       <span className="text-green-600 text-lg">✓</span>
                     </div>
                     <div>
-                      <div className="text-xs font-semibold">Issue Resolved</div>
-                      <div className="text-[10px] text-gray-500">WiFi Fixed!</div>
+                      <div className="text-xs font-semibold">College update</div>
+                      <div className="text-[10px] text-gray-500">New Event!</div>
                     </div>
                   </div>
                 </div>
