@@ -50,8 +50,8 @@ const Navbar = () => {
   const handleDownload = () => {
     // 1. Trigger APK download via hidden anchor
     const link = document.createElement('a');
-    link.href = './brig_radio_v1.0.0.apk';
-    link.download = 'brig_radio_v1.0.0.apk';
+    link.href = '/BrigRadio.apk';
+    link.download = 'BrigRadio.apk';
     link.style.display = 'none';
     document.body.appendChild(link);
     link.click();

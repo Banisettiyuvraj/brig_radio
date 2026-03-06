@@ -201,11 +201,8 @@ const Hero = () => {
             {/* CTA Buttons */}
             <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
-                href="#download"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector('#download')?.scrollIntoView({ behavior: 'smooth' });
-                }}
+                href="/BrigRadio.apk"
+                download="BrigRadio.apk"
                 className="btn-primary flex items-center justify-center gap-2 group"
               >
                 <Download className="w-5 h-5 transition-transform group-hover:translate-y-0.5" />
