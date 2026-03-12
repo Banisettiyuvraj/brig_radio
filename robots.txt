@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://brigradio.jo3.org/sitemap.xml
+Sitemap: https://brigradio.io3.org/sitemap.xml
