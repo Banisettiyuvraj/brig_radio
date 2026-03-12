@@ -38,7 +38,7 @@ const facultyTeam: TeamMember[] = [
     badgeText: 'Faculty Mentor',
   },
   {
-    name: 'Dr. Kumar',
+    name: 'Dr. Kumar Keshamoni',
     role: 'Dean of Academics',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com',
